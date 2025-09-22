@@ -36,7 +36,7 @@ const Footer = () => {
     { name: 'GitHub', icon: Github, href: 'https://github.com/anshu-312' },
     { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com/in/anshu-bhadani-255b91216' },
     { name: 'X', icon: XIcon, href: 'https://x.com/anshu_031201' },
-    { name: 'Qwiklabs', icon: CloudIcon, href: 'https://www.qwiklabs.com/public_profiles/your-profile-id' },
+    { name: 'Qwiklabs', icon: CloudIcon, href: 'https://www.cloudskillsboost.google/public_profiles/732dcbd3-a6d2-4b8e-a1cd-aab335907425' },
     { name: 'Email', icon: Mail, href: 'mailto:a.bhadani0301@gmail.com' },
   ];
 
