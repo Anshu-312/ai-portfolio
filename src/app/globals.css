@@ -1,0 +1,387 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* CLEAN COLOR SYSTEM - Professional & Minimal */
+  --void: #0A0B0F;              /* Deep black for premium feel */
+  --charcoal: #1A1B23;          /* Dark gray for depth */
+  --silver: #E8E9EA;            /* Clean white for text */
+  --accent: #D4AF37;            /* Subtle gold - elegant & refined */
+  --accent-dark: #B8860B;       /* Darker gold for hover */
+  --accent-light: #F5E6A3;      /* Very light gold for highlights */
+  --success: #00FF88;           /* Green for success states */
+  --warning: #FF6B35;           /* Orange for warnings/CTAs */
+  
+  /* GRADIENTS - Minimal & Clean */
+  --void-gradient: linear-gradient(135deg, #0A0B0F 0%, #1A1B23 100%);
+  --accent-gradient: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%);
+  --gold-silver-gradient: linear-gradient(135deg, #D4AF37 0%, #E8E9EA 100%);
+  --luxury-gradient: linear-gradient(135deg, #D4AF37 0%, #F5E6A3 50%, #E8E9EA 100%);
+  --success-gradient: linear-gradient(135deg, #00FF88 0%, #00CC6A 100%);
+  
+/* SHADOWS - Subtle & Professional */
+--glow: 0 0 8px rgba(212, 175, 55, 0.1);
+--glow-strong: 0 0 12px rgba(212, 175, 55, 0.15);
+--gold-glow: 0 0 8px rgba(212, 175, 55, 0.12);
+--luxury-glow: 0 0 6px rgba(212, 175, 55, 0.08);
+--shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--void);
+  color: var(--silver);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* SUBTLE BACKGROUND PATTERN */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.02) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(0, 255, 136, 0.02) 0%, transparent 50%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* CUSTOM SCROLLBAR */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--void);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-dark);
+}
+
+/* TYPOGRAPHY */
+.font-inter {
+  font-family: 'Inter', sans-serif;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* CLEAN CARDS */
+.clean-card {
+  background: rgba(26, 27, 35, 0.4);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(212, 175, 55, 0.08);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.clean-card:hover {
+  border-color: rgba(212, 175, 55, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px);
+}
+
+/* BUTTONS - Clean & Professional */
+.btn-primary {
+  background: var(--accent-gradient);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  color: var(--void);
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--glow-strong);
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 2px solid var(--accent);
+  padding: 10px 22px;
+  border-radius: 8px;
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-secondary:hover {
+  background: var(--accent);
+  color: var(--void);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--accent);
+  padding: 10px 22px;
+  border-radius: 8px;
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-outline:hover {
+  background: var(--accent);
+  color: var(--void);
+  transform: translateY(-2px);
+  box-shadow: var(--glow);
+}
+
+/* SECTIONS */
+.section {
+  padding: 60px 0;
+}
+
+/* ANIMATIONS - Subtle & Professional */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+@keyframes status-pulse {
+  0%, 100% { 
+    opacity: 0.6; 
+    transform: scale(1);
+  }
+  50% { 
+    opacity: 1; 
+    transform: scale(1.1);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.pulse {
+  animation: status-pulse 2s ease-in-out infinite;
+}
+
+/* GRID PATTERNS */
+.dots-pattern {
+  background-image: radial-gradient(circle, rgba(212, 175, 55, 0.08) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .section {
+    padding: 40px 0;
+  }
+  
+  .btn-primary, .btn-secondary {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+/* UTILITIES */
+.text-gradient {
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gold-silver {
+  background: var(--gold-silver-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-luxury {
+  background: var(--luxury-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glow {
+  box-shadow: var(--glow);
+}
+
+.glow-strong {
+  box-shadow: var(--glow-strong);
+}
+
+.gold-glow {
+  box-shadow: var(--gold-glow);
+}
+
+.luxury-glow {
+  box-shadow: var(--luxury-glow);
+}
+
+/* SUBTLE CARD VARIANTS */
+.card-subtle {
+  background: rgba(26, 27, 35, 0.3);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(212, 175, 55, 0.05);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.card-subtle:hover {
+  border-color: rgba(212, 175, 55, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+}
+
+/* MODAL BACKGROUND SCROLL DISABLE */
+body.modal-open {
+  overflow: hidden !important;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+}
+
+/* Prevent background content from being scrollable when modal is open */
+body.modal-open main {
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Ensure modal content remains interactive */
+body.modal-open .fixed.inset-0.z-50,
+body.modal-open .fixed.inset-0.z-50 * {
+  pointer-events: auto;
+  user-select: auto;
+}
+
+/* LINE CLAMP UTILITIES */
+.line-clamp-1 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.line-clamp-4 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+}
+
+/* UNIQUE GOLD-SILVER EFFECTS */
+.gold-silver-border {
+  border: 2px solid transparent;
+  background: linear-gradient(var(--void), var(--void)) padding-box,
+              var(--gold-silver-gradient) border-box;
+}
+
+.luxury-card {
+  background: rgba(26, 27, 35, 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.luxury-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gold-silver-gradient);
+}
+
+.gold-text {
+  color: var(--accent);
+  text-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
+}
+
+/* Hide scrollbar for carousel */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
